@@ -5,6 +5,7 @@
 using std::string;
 using std::ostream;
 
+// contructor to create inventory item object
 Inventory::Inventory(string name, float price, int count)
 {
   m_name = name;
@@ -12,12 +13,14 @@ Inventory::Inventory(string name, float price, int count)
   m_in_stock = count;
 }
 
+// sell the item if it is in stock
 void Inventory::sell()
 {
   if(m_in_stock)
     m_in_stock--;
 }
 
+// stream to be printed out in main whether or not item gets sold
 ostream& operator<<(ostream& stream, const Inventory& item)
 {
   if(item.m_in_stock){
